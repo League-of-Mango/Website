@@ -2,59 +2,100 @@
 <html lang="en">
     <!-- Site Header -->
     <head>
-        <title>The League of Mango</title>
+        <title>Minecraft</title>
         <meta name="author" content="KennyHammerspike">
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" href="index.css">
-        <link rel="icon" type="image/x-icon" href="/source/resources/images/INT-Gold-Icon.png">
+        <link rel="stylesheet/less" type="text/css" href="../default.less">
+        <link rel="icon" type="image/png" href="../../resources/images/INT-Gold-Icon.png">
+        <script src="https://cdn.jsdelivr.net/npm/less"></script>
     </head>
 
     <!-- Site Body -->
     <body>
         <!-- Page Header -->
         <header id="page-header">
-            <div id="header-main">
-                <img id="logo" src="/source/resources/images/INT-Gold-Icon.png" alt="LoM Icon">
-                <h1>The League of Mango</h1>
+            <a id="header-main" href="../index.html">
+                <img id="logo" src="../../resources/images/INT-Gold-Icon.png" alt="LoM Icon">
+                <h1 class="header-title">The League of Mango</h1>
+            </a>
+            <div id="header-links">
+                <div class="dropdown-section" id="header-minecraft">
+                    <button class="dropdown-button"><a href="../minecraft/minecraft-main.html">Minecraft</a></button>
+                    <div class="dropdown-content">
+                        <a href="">Modpacks</a>
+                        <a href="" hidden>Mods</a>
+                        <a href="">Supplementary Files</a>
+                    </div>
+                </div>
+
+                <div class="dropdown-section" id="header-gacha">
+                    <button class="dropdown-button"><a href="">Gacha Things</a></button>
+                    <div class="dropdown-content">
+                        <a href="">Arknights</a>
+                        <a href="">Priconne</a>
+                        <a href="" hidden>Path to Nowhere</a>
+                    </div>
+                </div>
+
+                <a id="header-other">Other Stuff</a>
             </div>
         </header>
 
         <!-- Page Main -->
         <main>
-            <div class="container-lg px-3 my-5 markdown-body">
-                <h2 id="basic-information">Basic Information<a class="anchorjs-link " href="#basic-information" aria-label="Anchor" data-anchorjs-icon="" style="font: 1em / 1 anchorjs-icons; padding-left: 0.375em;"></a></h2>
+            <div id="server-info">
+                <h2 class="title">Minecraft Server</h2>
+                <h3 id="server-ip">Server IP: <strong>mc.leagueofmango.xyz</strong></h3>
+                <p id="server-version">Current Version: <b>1.16.5 Crucial 2 Modpack (with additional mods)</b></p>
 
-                <p>The League of Mango is a Discord server that is comprised of friends who like to play games.</p>
-
-                <p><a href="https://leagueofmango.xyz">League of Mango Website</a><br>
-                    <em>Note: The Website is undergoing a heavy reconstruction and may be missing key information.</em></p>
-
-                <p><a href="https://discord.gg/3EdxPxTzc5">League of Mango Discord Server</a></p>
-
-                <p>Maintained by KennyHammerspike:<br></p>
-                <ul>
-                    <li><strong>KennyHammerspike#9443</strong> on Discord</li>
-                </ul>
-
-                <h2 id="minecraft-server">Minecraft Server<a class="anchorjs-link " href="#minecraft-server" aria-label="Anchor" data-anchorjs-icon="" style="font: 1em / 1 anchorjs-icons; padding-left: 0.375em;"></a></h2>
-
-                <h3 id="server-ip-mcleagueofmangoxyz">Server IP: <strong>mc.leagueofmango.xyz</strong><a class="anchorjs-link " href="#server-ip-mcleagueofmangoxyz" aria-label="Anchor" data-anchorjs-icon="" style="font: 1em / 1 anchorjs-icons; padding-left: 0.375em;"></a></h3>
-                <p>Current Version: <strong>1.16 - Crucial 2 Modpack (with additional mods)</strong></p>
-
-                <p>The League of Mango Minecraft Server runs 24/7 aside from updates and a daily maintenance reset.<br>
+                <p id="server-description">The League of Mango Minecraft Server runs 24/7 aside from updates and a daily maintenance reset.<br>
                     The server will change from time to time depending on what is being played.</p>
 
-                <p>Automatic Backups every 12 hours.<br>
+                <p id="server-logistics">Automatic Backups every 12 hours.<br>
                     Daily Reset at 5:20 AM PT.</p>
+            </div>
+            <script src="../../resources/scripts/collapsible-button.js"></script>
+            <button type="button" class="collapsible-button">Modpack Installation Guide</button>
+                <div class="collapsible-content" id="modpack-installation">
+                    <span>Hi</span>
+                    <ol>
+                        <li>Download the .zip file of the modpack you would like to install.</li>
+                        <li>Install <a class="site-link" href="https://prismlauncher.org/download/"><b>PrismLauncher</b></a>.<br>
+                            <b>PrismLauncher</b> is a lightweight Minecraft instance manager that allows for mods and modpacks to be easily installed.
+                            Out of every Minecraft instance manager that exists right now, <b>PrismLauncher</b> is the best because it is functional, lightweight, and does not have <a href="https://github.com/PolyMC/PolyMC/commit/ccf282593dcdbe189c99b81b8bc90cb203aed3ee"><i>questionable developers.</i></a></li>
+                        <li>Drag the modpack .zip file into <b>PrismLauncher</b>.</li>
+                        <li>In <b>PrismLauncher</b> settings or Settings in the Edit Instance tab, set the Java Installation to a 64-bit <strong>Java 17</strong> Installation (javaw.exe).
+                            You can use the auto-detect Java button to select a correct installation.
+                            If you have not installed <strong>Java 17</strong>, you can install it from <a class="site-link" href="https://www.oracle.com/java/technologies/javase/jdk17-archive-downloads.html">Oracle</a> or <a class="site-link" href="https://adoptium.net/temurin/releases/?version=17)">Adoptium</a>.
+                            One version may work better than the other depending on your system.</li>
+                        <li>Allocate sufficient RAM to the modpack.
+                            Users with <strong>16 GB</strong> of RAM <em>or more</em> should allocate a <em>minimum</em> of <strong>4GB (4096 MB)</strong> and a <em>maximum</em> of <strong>8GB (8192 MB)</strong> to <strong>10 GB (10240 MB)</strong>.
+                            Allocating more than 8 GB of RAM may actually lower performance on some systems.
+                            Users with <strong>8 GB of RAM</strong> should allocate a <em>minimum</em> of <strong>2GB (2049 MB)</strong> and a <em>maximum</em> of <strong>4 GB (4096 MB)</strong> of RAM.
+                            Users with <em>less than</em> <strong>8 GB of RAM</strong> will most likely be unable to run modpacks at all.</li>
+                        <li>Add the following to the JVM Arguments section to make Minecraft run better:
+                            <pre>
+                            <code>
+                                -XX:+UseG1GC -XX:+ParallelRefProcEnabled -XX:MaxGCPauseMillis=200 -XX:+UnlockExperimentalVMOptions -XX:+DisableExplicitGC -XX:+AlwaysPreTouch -XX:G1NewSizePercent=30 -XX:G1MaxNewSizePercent=40 -XX:G1HeapRegionSize=8M -XX:G1ReservePercent=20 -XX:G1HeapWastePercent=5 -XX:G1MixedGCCountTarget=4 -XX:InitiatingHeapOccupancyPercent=15 -XX:G1MixedGCLiveThresholdPercent=90 -XX:G1RSetUpdatingPauseTimePercent=5 -XX:SurvivorRatio=32 -XX:+PerfDisableSharedMem -XX:MaxTenuringThreshold=1
+                            </code>
+                        </pre></li>
+                        <li>Click Launch to finish the installation and run the modpack.</li>
+                        <li>If you have any trouble installing <b>PrismLauncher</b> or any modpacks, contact <b>Kenny</b> for assistance.</li>
+                    </ol>
+                </div>
 
+            <div id="modpack-list">
+
+            </div>
+            <div class="container-lg px-3 my-5 markdown-body" hidden>
                 <h2 id="crucial-2-modpack">Crucial 2 Modpack<a class="anchorjs-link " href="#crucial-2-modpack" aria-label="Anchor" data-anchorjs-icon="" style="font: 1em / 1 anchorjs-icons; padding-left: 0.375em;"></a></h2>
                 <p>Crucial 2 is a modpack by <a href="https://vazkii.net/">Vazkii</a>, creator of famous mods such as Quark, Botania, and Neat.
                     Crucial 2 contains many Vanilla+ additions such as blocks, mobs, and mechanics that would fit into vanilla Minecraft.</p>
 
-                <p>To manage modded Mincraft instances I recommend using <strong><a href="https://prismlauncher.org/download">PrismLauncher</a></strong>.</p>
+                <p>To manage modded Minecraft instances I recommend using <strong><a href="https://prismlauncher.org/download">PrismLauncher</a></strong>.</p>
 
-                <p>The base modpack may be downoaded here:
+                <p>The base modpack may be downloaded here:
                     <strong><a href="https://www.curseforge.com/minecraft/modpacks/crucial-2/download/3644360">Crucial 2 Base Modpack</a></strong></p>
 
                 <p>The modpack patch may be downloaded here:
@@ -188,12 +229,6 @@
                         </ul>
                     </li>
                 </ul>
-
-                <h2 id="svalbard"><a href="https://github.com/League-of-Mango/Svalbard">Svalbard</a><a class="anchorjs-link " href="#svalbard" aria-label="Anchor" data-anchorjs-icon="" style="font: 1em / 1 anchorjs-icons; padding-left: 0.375em;"></a></h2>
-
-                <p>Svalbard is a GitHub repository that contains various miscellaneous or supplemental files for various games, notably Minecraft.</p>
-
-                <p>You can find custom-made Minecraft maps, resource packs, data packs, and more.</p>
             </div>
         </main>
     </body>
