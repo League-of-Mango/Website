@@ -7,6 +7,7 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet/less" type="text/css" href="default.less">
+        <link rel="stylesheet/less" type="text/css" href="index.less">
         <link rel="icon" type="image/png" href="../resources/images/INT-Gold-Icon.png">
         <script src="https://cdn.jsdelivr.net/npm/less"></script>
         <script src="../resources/scripts/collapsible-button.js"></script>
@@ -20,27 +21,31 @@
                 <img id="logo" src="../resources/images/INT-Gold-Icon.png" alt="LoM Icon">
                 <h1 class="header-title">The League of Mango</h1>
             </a>
-            <div id="header-links">
-                <div class="dropdown-section" id="header-minecraft">
-                    <button class="dropdown-button"><a href="minecraft/minecraft-main.html">Minecraft</a></button>
-                    <div class="dropdown-content">
-                        <a href="">Modpacks</a>
-                        <a href="" hidden>Mods</a>
-                        <a href="">Supplementary Files</a>
-                    </div>
-                </div>
 
-                <div class="dropdown-section" id="header-gacha">
-                    <button class="dropdown-button"><a href="">Gacha Things</a></button>
-                    <div class="dropdown-content">
-                        <a href="">Arknights</a>
-                        <a href="">Priconne</a>
-                        <a href="" hidden>Path to Nowhere</a>
-                    </div>
-                </div>
-
-                <a id="header-other">Other Stuff</a>
-            </div>
+            <ul id="header-navbar">
+                <li class="dropdown-section" id="navbar-minecraft">
+                    <a href="minecraft/minecraft-main.html">Minecraft</a>
+                    <ul class="dropdown-content">
+                        <li class="dropdown-section" id="navbar-modpacks">
+                            <a href="minecraft/minecraft-main.html#modpacks">Modpacks</a>
+                            <span class="expand">»</span>
+                            <ul class="dropdown-content">
+                                <li><a href="minecraft/modpacks/imba.html">IMBA</a></li>
+                                <li><a href="minecraft/modpacks/crucial-2.html">Crucial 2</a></li>
+                            </ul></li>
+                        <li id="navbar-mods"><a href="minecraft/minecraft-main.html#mods">Mods</a></li>
+                        <li id="navbar-supplementary-files"><a href="minecraft/supplementary-files.html">Supplementary Files</a></li>
+                    </ul></li>
+                <li class="dropdown-section" id="navbar-gacha">
+                    <a href="">Gacha Things</a>
+                    <ul class="dropdown-content">
+                        <li id="navbar-arknights"><a href="gacha/arknights.html">Arknights</a></li>
+                        <li id="navbar-priconne"><a href="gacha/priconne.html">Priconne</a></li>
+                    </ul></li>
+                <li class="dropdown-section" id="navbar-other">
+                    <a href="">Other Stuff</a>
+                    </li>
+            </ul>
         </header>
 
         <!-- Page Main -->

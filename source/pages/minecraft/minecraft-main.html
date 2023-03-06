@@ -9,6 +9,8 @@
         <link rel="stylesheet/less" type="text/css" href="../default.less">
         <link rel="icon" type="image/png" href="../../resources/images/INT-Gold-Icon.png">
         <script src="https://cdn.jsdelivr.net/npm/less"></script>
+        <script src="../../resources/scripts/collapsible-button.js" defer></script>
+        <script src="../../resources/scripts/copy-code-block.js" defer></script>
     </head>
 
     <!-- Site Body -->
@@ -19,27 +21,30 @@
                 <img id="logo" src="../../resources/images/INT-Gold-Icon.png" alt="LoM Icon">
                 <h1 class="header-title">The League of Mango</h1>
             </a>
-            <div id="header-links">
-                <div class="dropdown-section" id="header-minecraft">
-                    <button class="dropdown-button"><a href="../minecraft/minecraft-main.html">Minecraft</a></button>
-                    <div class="dropdown-content">
-                        <a href="">Modpacks</a>
-                        <a href="" hidden>Mods</a>
-                        <a href="">Supplementary Files</a>
-                    </div>
-                </div>
 
-                <div class="dropdown-section" id="header-gacha">
-                    <button class="dropdown-button"><a href="">Gacha Things</a></button>
-                    <div class="dropdown-content">
-                        <a href="">Arknights</a>
-                        <a href="">Priconne</a>
-                        <a href="" hidden>Path to Nowhere</a>
-                    </div>
-                </div>
-
-                <a id="header-other">Other Stuff</a>
-            </div>
+            <ul id="header-navbar">
+                <li class="dropdown-section" id="header-minecraft">
+                    <a href="minecraft-main.html">Minecraft</a>
+                    <ul class="dropdown-content">
+                        <li class="dropdown-section" id="header-modpacks">
+                            <a href="minecraft-main.html#modpacks">Modpacks</a>
+                            <ul class="dropdown-content">
+                                <li><a href="modpacks/imba.html">IMBA</a></li>
+                                <li><a href="modpacks/crucial-2.html" hidden>Crucial 2</a></li>
+                            </ul></li>
+                        <li id="header-mods"><a href="minecraft-main.html#mods" hidden>Mods</a></li>
+                        <li id="header-supplementary-files"><a href="supplementary-files.html">Supplementary Files</a></li>
+                    </ul></li>
+                <li class="dropdown-section" id="header-gacha">
+                    <a href="">Gacha Things</a>
+                    <ul class="dropdown-content">
+                        <li id="header-arknights"><a href="../gacha/arknights.html">Arknights</a></li>
+                        <li id="header-priconne"><a href="../gacha/priconne.html">Priconne</a></li>
+                    </ul></li>
+                <li class="dropdown-section" id="header-other">
+                    <a href="">Other Stuff</a>
+                </li>
+            </ul>
         </header>
 
         <!-- Page Main -->
@@ -55,130 +60,40 @@
                 <p id="server-logistics">Automatic Backups every 12 hours.<br>
                     Daily Reset at 5:20 AM PT.</p>
             </div>
-            <script src="../../resources/scripts/collapsible-button.js"></script>
+
             <button type="button" class="collapsible-button">Modpack Installation Guide</button>
-                <div class="collapsible-content" id="modpack-installation">
-                    <span>Hi</span>
-                    <ol>
-                        <li>Download the .zip file of the modpack you would like to install.</li>
-                        <li>Install <a class="site-link" href="https://prismlauncher.org/download/"><b>PrismLauncher</b></a>.<br>
-                            <b>PrismLauncher</b> is a lightweight Minecraft instance manager that allows for mods and modpacks to be easily installed.
-                            Out of every Minecraft instance manager that exists right now, <b>PrismLauncher</b> is the best because it is functional, lightweight, and does not have <a href="https://github.com/PolyMC/PolyMC/commit/ccf282593dcdbe189c99b81b8bc90cb203aed3ee"><i>questionable developers.</i></a></li>
-                        <li>Drag the modpack .zip file into <b>PrismLauncher</b>.</li>
-                        <li>In <b>PrismLauncher</b> settings or Settings in the Edit Instance tab, set the Java Installation to a 64-bit <strong>Java 17</strong> Installation (javaw.exe).
-                            You can use the auto-detect Java button to select a correct installation.
-                            If you have not installed <strong>Java 17</strong>, you can install it from <a class="site-link" href="https://www.oracle.com/java/technologies/javase/jdk17-archive-downloads.html">Oracle</a> or <a class="site-link" href="https://adoptium.net/temurin/releases/?version=17)">Adoptium</a>.
-                            One version may work better than the other depending on your system.</li>
-                        <li>Allocate sufficient RAM to the modpack.
-                            Users with <strong>16 GB</strong> of RAM <em>or more</em> should allocate a <em>minimum</em> of <strong>4GB (4096 MB)</strong> and a <em>maximum</em> of <strong>8GB (8192 MB)</strong> to <strong>10 GB (10240 MB)</strong>.
-                            Allocating more than 8 GB of RAM may actually lower performance on some systems.
-                            Users with <strong>8 GB of RAM</strong> should allocate a <em>minimum</em> of <strong>2GB (2049 MB)</strong> and a <em>maximum</em> of <strong>4 GB (4096 MB)</strong> of RAM.
-                            Users with <em>less than</em> <strong>8 GB of RAM</strong> will most likely be unable to run modpacks at all.</li>
-                        <li>Add the following to the JVM Arguments section to make Minecraft run better:
-                            <pre>
-                            <code>
-                                -XX:+UseG1GC -XX:+ParallelRefProcEnabled -XX:MaxGCPauseMillis=200 -XX:+UnlockExperimentalVMOptions -XX:+DisableExplicitGC -XX:+AlwaysPreTouch -XX:G1NewSizePercent=30 -XX:G1MaxNewSizePercent=40 -XX:G1HeapRegionSize=8M -XX:G1ReservePercent=20 -XX:G1HeapWastePercent=5 -XX:G1MixedGCCountTarget=4 -XX:InitiatingHeapOccupancyPercent=15 -XX:G1MixedGCLiveThresholdPercent=90 -XX:G1RSetUpdatingPauseTimePercent=5 -XX:SurvivorRatio=32 -XX:+PerfDisableSharedMem -XX:MaxTenuringThreshold=1
-                            </code>
-                        </pre></li>
-                        <li>Click Launch to finish the installation and run the modpack.</li>
-                        <li>If you have any trouble installing <b>PrismLauncher</b> or any modpacks, contact <b>Kenny</b> for assistance.</li>
-                    </ol>
-                </div>
+            <ol class="collapsible-content" id="modpack-installation">
+                <li>Download the .zip file of the modpack you would like to install.</li>
+                <li>Install <a class="site-link" href="https://prismlauncher.org/download/"><b>PrismLauncher</b></a>.<br>
+                    <b>PrismLauncher</b> is a lightweight Minecraft instance manager that allows for mods and modpacks to be easily installed.
+                    Out of every Minecraft instance manager that exists right now, <b>PrismLauncher</b> is the best because it is functional, lightweight, and does not have <a href="https://github.com/PolyMC/PolyMC/commit/ccf282593dcdbe189c99b81b8bc90cb203aed3ee"><i>questionable developers.</i></a></li>
+                <li>Drag the modpack .zip file into <b>PrismLauncher</b>.</li>
+                <li>In <b>PrismLauncher</b> settings or Settings in the Edit Instance tab, set the Java Installation to a 64-bit <strong>Java 17</strong> Installation (javaw.exe).
+                    You can use the auto-detect Java button to select a correct installation.
+                    If you have not installed <strong>Java 17</strong>, you can install it from <a class="site-link" href="https://www.oracle.com/java/technologies/javase/jdk17-archive-downloads.html">Oracle</a> or <a class="site-link" href="https://adoptium.net/temurin/releases/?version=17)">Adoptium</a>.
+                    One version may work better than the other depending on your system.</li>
+                <li>Allocate sufficient RAM to the modpack.
+                    Users with <strong>16 GB</strong> of RAM <em>or more</em> should allocate a <em>minimum</em> of <strong>4GB (4096 MB)</strong> and a <em>maximum</em> of <strong>8GB (8192 MB)</strong> to <strong>10 GB (10240 MB)</strong>.
+                    Allocating more than 8 GB of RAM may actually lower performance on some systems.
+                    Users with <strong>8 GB of RAM</strong> should allocate a <em>minimum</em> of <strong>2GB (2049 MB)</strong> and a <em>maximum</em> of <strong>4 GB (4096 MB)</strong> of RAM.
+                    Users with <em>less than</em> <strong>8 GB of RAM</strong> will most likely be unable to run modpacks at all.</li>
+                <li>Add the following to the JVM Arguments section to make Minecraft run better:
+                    <pre id="jvm-args">
+                        <code>-XX:+UseG1GC -XX:+ParallelRefProcEnabled -XX:MaxGCPauseMillis=200 -XX:+UnlockExperimentalVMOptions -XX:+DisableExplicitGC -XX:+AlwaysPreTouch -XX:G1NewSizePercent=30 -XX:G1MaxNewSizePercent=40 -XX:G1HeapRegionSize=8M -XX:G1ReservePercent=20 -XX:G1HeapWastePercent=5 -XX:G1MixedGCCountTarget=4 -XX:InitiatingHeapOccupancyPercent=15 -XX:G1MixedGCLiveThresholdPercent=90 -XX:G1RSetUpdatingPauseTimePercent=5 -XX:SurvivorRatio=32 -XX:+PerfDisableSharedMem -XX:MaxTenuringThreshold=1</code>
+                    </pre></li>
+                <li>Click Launch to finish the installation and run the modpack.</li>
+                <li>If you have any trouble installing <b>PrismLauncher</b> or any modpacks, contact <b>Kenny</b> for assistance.</li>
+            </ol>
 
-            <div id="modpack-list">
-
+            <div id="modpacks">
+                <h2 class="title">Modpacks</h2>
             </div>
+
+            <div id="mods" hidden>
+                <h2 class="title">Mods</h2>
+            </div>
+
             <div class="container-lg px-3 my-5 markdown-body" hidden>
-                <h2 id="crucial-2-modpack">Crucial 2 Modpack<a class="anchorjs-link " href="#crucial-2-modpack" aria-label="Anchor" data-anchorjs-icon="" style="font: 1em / 1 anchorjs-icons; padding-left: 0.375em;"></a></h2>
-                <p>Crucial 2 is a modpack by <a href="https://vazkii.net/">Vazkii</a>, creator of famous mods such as Quark, Botania, and Neat.
-                    Crucial 2 contains many Vanilla+ additions such as blocks, mobs, and mechanics that would fit into vanilla Minecraft.</p>
-
-                <p>To manage modded Minecraft instances I recommend using <strong><a href="https://prismlauncher.org/download">PrismLauncher</a></strong>.</p>
-
-                <p>The base modpack may be downloaded here:
-                    <strong><a href="https://www.curseforge.com/minecraft/modpacks/crucial-2/download/3644360">Crucial 2 Base Modpack</a></strong></p>
-
-                <p>The modpack patch may be downloaded here:
-                    <strong><a href="https://github.com/League-of-Mango/Svalbard/raw/main/minecraft/modpack-patches/Crucial%202%20Patch.zip">Crucial 2 Patch</a></strong></p>
-
-                <p>Just drag the contents of the patch into your mods folder of your Crucial 2 instance. Then, disable Antique Atlas and Antique Waystone.</p>
-
-                <p>In addition to the base modpack, we have added the following mods and their library mods to make the modpack more interesting before the official modpack is released:</p>
-
-                <details>
-                    <summary>List of Added Mods</summary>
-                    <ul>
-                        <li><strong><a href="https://www.curseforge.com/minecraft/mc-mods/botania">Botania</a></strong>
-                            <ul>
-                                <li>Magical plants that provide nice rewards. Some engineering is required to produce greater rewards. Also contains various useful magical artifacts.</li>
-                            </ul>
-                        </li>
-                        <li><strong><a href="https://www.curseforge.com/minecraft/mc-mods/astral-sorcery">Astral Sorcery</a></strong>
-                            <ul>
-                                <li>Starlight and constellation based magic.</li>
-                            </ul>
-                        </li>
-                        <li><strong><a href="https://www.curseforge.com/minecraft/mc-mods/tinkers-construct">Tinker’s Construct</a></strong>
-                            <ul>
-                                <li>A revamped system for creating tools and weapons. Tools and weapons are now crafted from individual parts which add various modifiers and different stats based on the material used. Also adds new alloys, slimes, and tools.</li>
-                                <li><a href="https://www.curseforge.com/minecraft/mc-mods/tinkers-planner">Tinker’s Planner</a>
-                                    <ul>
-                                        <li>Addon that allows for easy tool planning.</li>
-                                    </ul>
-                                </li>
-                            </ul>
-                        </li>
-                        <li><strong><a href="https://www.curseforge.com/minecraft/mc-mods/mmmmmmmmmmmm">MmmMmmMmmMmm</a></strong>
-                            <ul>
-                                <li>Adds a target dummy that lets you test out the damage of your weapons.</li>
-                            </ul>
-                        </li>
-                        <li><strong><a href="https://www.curseforge.com/minecraft/mc-mods/journeymap">JourneyMap</a></strong>
-                            <ul>
-                                <li>Adds a large, automatically updating map, markable waypoints, as well as a minimap.</li>
-                            </ul>
-                        </li>
-                        <li><strong><a href="https://www.curseforge.com/minecraft/mc-mods/horse-combat-controls">Horse Combat Controls</a></strong>
-                            <ul>
-                                <li>Makes combat on horseback easier.</li>
-                            </ul>
-                        </li>
-                        <li><strong><a href="https://www.curseforge.com/minecraft/mc-mods/two-players-one-horse">Two Players, One Horse</a></strong>
-                            <ul>
-                                <li>Enables two players to ride on one horse.</li>
-                            </ul>
-                        </li>
-                        <li><strong><a href="https://www.curseforge.com/minecraft/mc-mods/curious-elytra">Curious Elytra</a></strong>
-                            <ul>
-                                <li>Allows for you to put an Elytra on a Curios back slot.</li>
-                            </ul>
-                        </li>
-                        <li><strong><a href="https://www.curseforge.com/minecraft/mc-mods/friendly-fire">Friendly Fire</a></strong>
-                            <ul>
-                                <li>Prevents you from accidentally killing your pets. You can sneak to attack them if you are a monster.</li>
-                            </ul>
-                        </li>
-                        <li><strong><a href="https://www.curseforge.com/minecraft/mc-mods/kleeslabs">Knee Slabs</a></strong>
-                            <ul>
-                                <li>Allows for half of a double slab to be broken.</li>
-                            </ul>
-                        </li>
-                        <li><strong><a href="https://www.curseforge.com/minecraft/mc-mods/torchslabs-mod">Torch Slabs Mod</a></strong>
-                            <ul>
-                                <li>Allows for torches and lanterns to be placed on slabs.</li>
-                            </ul>
-                        </li>
-                        <li><strong><a href="https://www.curseforge.com/minecraft/mc-mods/path-under-gates">Path Under Gates</a></strong>
-                            <ul>
-                                <li>Allows for grass path blocks to exist under fence gates.</li>
-                            </ul>
-                        </li>
-                        <li>In addition, Antique Atlas and Antique Waystones will be disabled.</li>
-                    </ul>
-                </details>
-
-                <p>To play on the server, you <strong>must</strong> add these additional mods to the modpack and <strong>disable</strong> Antique Atlas and Antique Waystones.
-                    All of these mods are present in the modpack patch.</p>
 
                 <h2 id="inter-mangos-bizarre-adventure"><a href="http://imba.leagueofmango.xyz">Inter Mango’s Bizarre Adventure</a><a class="anchorjs-link " href="#inter-mangos-bizarre-adventure" aria-label="Anchor" data-anchorjs-icon="" style="font: 1em / 1 anchorjs-icons; padding-left: 0.375em;"></a></h2>
                 <p>Inter Mango’s Bizarre Adventure, the official League of Mango modpack, is currently in development.</p>
